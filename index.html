@@ -1064,14 +1064,15 @@ body{
       justify-content: center;
       align-items: center;
   }
-  
+  .blur {
+    filter: blur(5px); /* Define o efeito de desfoque */
+}
   .popup-content {
       background-color: white;
       width: 90%; /* Ocupa 1/4 da largura da tela */
       padding: 20px;
       border-radius: 20px;
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-      filter: blur(5px);
       position: relative; /* Para posicionar os botões dentro do popup */
       text-align: center;
   }
@@ -1379,15 +1380,29 @@ document.addEventListener('DOMContentLoaded', function() {
             popup.style.display = 'flex'; // Mostra o popup
         });
     
+    document.addEventListener('DOMContentLoaded', function () {
+        var popup = document.getElementById('popup');
+        var imagem = document.getElementById('imagemPopup');
+        var close = document.querySelector('.close');
+        var content = document.querySelector('.content');
+    
+        imagem.addEventListener('click', function () {
+            popup.style.display = 'flex'; // Mostra o popup
+            content.classList.add('blur'); // Adiciona o efeito de desfoque
+        });
+    
         close.addEventListener('click', function () {
             popup.style.display = 'none'; // Esconde o popup
+            content.classList.remove('blur'); // Remove o efeito de desfoque
         });
     
         window.addEventListener('click', function (event) {
             if (event.target === popup) {
                 popup.style.display = 'none'; // Esconde o popup se clicar fora dele
+                content.classList.remove('blur'); // Remove o efeito de desfoque
             }
         });
     });
+
   </script>
 </html>
