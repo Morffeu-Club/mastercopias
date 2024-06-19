@@ -215,5 +215,25 @@ document.addEventListener('DOMContentLoaded', function() {
       indice = (indice + 1) % imagens.length;
         }
     setInterval(mudarImagem, 5000);
+  document.addEventListener('DOMContentLoaded', function () {
+      var popup = document.getElementById('popup');
+      var imagem = document.getElementById('imagemPopup');
+      var close = document.querySelector('.close');
+  
+      imagem.addEventListener('click', function () {
+          popup.style.display = 'flex'; // Mostra o popup
+      });
+  
+      close.addEventListener('click', function () {
+          popup.style.display = 'none'; // Esconde o popup
+      });
+  
+      window.addEventListener('click', function (event) {
+          if (event.target === popup) {
+              popup.style.display = 'none'; // Esconde o popup se clicar fora dele
+          }
+      });
+  });
+
   </script>
 </html>
