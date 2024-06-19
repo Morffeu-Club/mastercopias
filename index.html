@@ -1051,44 +1051,42 @@ body{
                   padding-left: 3px;
             }
       }
-.popup {
-    display: none; /* Escondido por padrão */
-    position: fixed; /* Fica fixo na tela */
-    z-index: 1000; /* Fica por cima de todos os elementos */
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%); /* Centraliza no meio da tela */
-    width: 50%;
-    height: 50%;
-    background-color: rgba(0, 0, 0, 0.8); /* Fundo semitransparente */
-    display: flex; /* Para centralizar o conteúdo */
-    justify-content: center;
-    align-items: center;
-}
-
-.popup-content {
-    background-color: white;
-    width: 90%; /* Largura do conteúdo dentro do popup */
-    padding: 20px;
-    border-radius: 20px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-    position: relative; /* Para posicionar os botões dentro do popup */
-    text-align: center;
-}
-
-.close {
-    position: absolute;
-    top: -20px;
-    right: -20px;
-    background-color: red;
-    color: white;
-    font-size: 50px;
-    border: none;
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    cursor: pointer;
-}
+  .popup {
+      display: none; /* Escondido por padrão */
+      position: fixed; /* Fica fixo na tela */
+      z-index: 1000; /* Fica por cima de todos os elementos */
+      left: 50%;
+      top: 50%;
+      width: 50%;
+      height: 50%;
+      background-color: rgba(0, 0, 0, 0.8); /* Fundo semitransparente */
+      justify-content: center;
+      align-items: center;
+  }
+  
+  .popup-content {
+      background-color: white;
+      width: 90%; /* Ocupa 1/4 da largura da tela */
+      padding: 20px;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+      position: relative; /* Para posicionar os botões dentro do popup */
+      text-align: center;
+  }
+  
+  .close {
+      position: absolute;
+      top: -20px;
+      right: -20px;
+      background-color: red;
+      color: white;
+      font-size: 50px;
+      border: none;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      cursor: pointer;
+  }
   </style>
   <body id="iau9"><!-- HTML !--><section id="inkxa" class="gjs-section">
     <div class="navbar" id="navbar">
