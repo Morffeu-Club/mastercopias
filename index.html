@@ -1379,30 +1379,24 @@ document.addEventListener('DOMContentLoaded', function() {
         imagem.addEventListener('click', function () {
             popup.style.display = 'flex'; // Mostra o popup
         });
-    
     document.addEventListener('DOMContentLoaded', function () {
         var popup = document.getElementById('popup');
         var imagem = document.getElementById('imagemPopup');
         var close = document.querySelector('.close');
-        var content = document.querySelector('.content');
     
         imagem.addEventListener('click', function () {
             popup.style.display = 'flex'; // Mostra o popup
-            content.classList.add('blur'); // Adiciona o efeito de desfoque
         });
     
         close.addEventListener('click', function () {
             popup.style.display = 'none'; // Esconde o popup
-            content.classList.remove('blur'); // Remove o efeito de desfoque
         });
     
         window.addEventListener('click', function (event) {
             if (event.target === popup) {
                 popup.style.display = 'none'; // Esconde o popup se clicar fora dele
-                content.classList.remove('blur'); // Remove o efeito de desfoque
             }
         });
     });
-
   </script>
 </html>
