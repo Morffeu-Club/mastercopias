@@ -1241,81 +1241,91 @@ window.addEventListener('scroll', function() {
   }
 });
 
-// Listener para scroll suave ao clicar no botão correspondente à seção i71hx
 document.addEventListener('DOMContentLoaded', function() {
+  // Botão "scrollButton"
   var scrollButton = document.getElementById('scrollButton');
+  var targetSection1 = document.getElementById('i71hx');
+
+  scrollButton.addEventListener('click', function() {
+    targetSection1.scrollIntoView({ behavior: 'smooth' });
+  });
+
+  // Botão "Sobrenox"
   var sobrenoxButton = document.getElementById('Sobrenos');
+  var targetSection2 = document.getElementById('i71hx'); // Corrigido para seção correspondente
+
+  sobrenoxButton.addEventListener('click', function() {
+    targetSection2.scrollIntoView({ behavior: 'smooth' });
+  });
+
+  // Botão "Produtos"
   var produtosButton = document.getElementById('Produtos');
+  var targetSection3 = document.getElementById('ike5o'); // Corrigido para seção correspondente
+
+  produtosButton.addEventListener('click', function() {
+    targetSection3.scrollIntoView({ behavior: 'smooth' });
+  });
+
+  // Botão "Promoções"
   var promocoesButton = document.getElementById('Promocoes');
+  var targetSection4 = document.getElementById('i0zcrl'); // Corrigido para seção correspondente
+
+  promocoesButton.addEventListener('click', function() {
+    targetSection4.scrollIntoView({ behavior: 'smooth' });
+  });
+
+  // Botão "Contato"
   var contatoButton = document.getElementById('Contato');
+  var targetSection5 = document.getElementById('isq1p'); // Corrigido para seção correspondente
 
-  var sections = {
-    scrollButton: document.getElementById('i71hx'),
-    Sobrenos: document.getElementById('i71hx'),
-    Produtos: document.getElementById('ike5o'),
-    Promocoes: document.getElementById('i0zcrl'),
-    Contato: document.getElementById('isq1p')
-  };
-
+  contatoButton.addEventListener('click', function() {
+    targetSection5.scrollIntoView({ behavior: 'smooth' });
+  });
+});
+document.addEventListener('DOMContentLoaded', function() {
   var navbarLinks = document.querySelectorAll('.navbar .nav-link');
-  var contentSections = document.querySelectorAll('.content');
+  var sections = document.querySelectorAll('.content');
 
-  function scrollToSection(sectionId) {
-    sections[sectionId].scrollIntoView({ behavior: 'smooth' });
-  }
-
+  // Função para destacar o link ativo na navbar
   function highlightNavbarLink() {
     var scrollPosition = window.scrollY + 100; // Ajuste conforme necessário para o offset
 
-    contentSections.forEach(function(section, index) {
+    sections.forEach(function(section, index) {
       var sectionTop = section.offsetTop;
       var sectionHeight = section.clientHeight;
 
       if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+        // Remove a classe 'active' de todos os links da navbar
         navbarLinks.forEach(function(link) {
           link.classList.remove('active');
         });
+        // Adiciona a classe 'active' ao link correspondente à seção visível
         navbarLinks[index].classList.add('active');
       }
     });
   }
 
-  scrollButton.addEventListener('click', function() {
-    scrollToSection('scrollButton');
-  });
-
-  sobrenoxButton.addEventListener('click', function() {
-    scrollToSection('Sobrenos');
-  });
-
-  produtosButton.addEventListener('click', function() {
-    scrollToSection('Produtos');
-  });
-
-  promocoesButton.addEventListener('click', function() {
-    scrollToSection('Promocoes');
-  });
-
-  contatoButton.addEventListener('click', function() {
-    scrollToSection('Contato');
-  });
-
+  // Listener para scroll manual na página
   window.addEventListener('scroll', highlightNavbarLink);
 
+  // Listener para scroll suave ao clicar nos links da navbar
   navbarLinks.forEach(function(link) {
     link.addEventListener('click', function(event) {
-      event.preventDefault();
-      var targetId = this.id;
-      scrollToSection(targetId);
+      event.preventDefault(); // Previne o comportamento padrão do link
 
+      var targetId = this.id; // Obtém o ID do link clicado
+      var targetSection = document.getElementById(targetId);
+
+      // Scroll suave até a seção correspondente
+      targetSection.scrollIntoView({ behavior: 'smooth' });
+
+      // Adiciona a classe 'active' ao link clicado e remove de todos os outros
       navbarLinks.forEach(function(link) {
         link.classList.remove('active');
       });
       this.classList.add('active');
     });
   });
-});
-//123456
   // Chama a função ao carregar a página para definir o estado inicial
   highlightNavbarLink();
 });
