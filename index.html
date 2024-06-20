@@ -1095,6 +1095,9 @@ body{
       <a id="Sobrenos" class="nav-link">Sobre nós</a>
       <a id="Contato" class="nav-link">Contato</a>
     </div>
+    <div id="widget-script">
+      <script src='https://greebox.app/widget/wd/StRJBaEHXgpd' type='text/javascript' charset='utf-8' async defer></script>
+    </div>
     <div id="ia8bi" class="gjs-container">
       <div id="ifcyy" class="gjs-grid-row">
         <div id="izf7b7" class="gjs-grid-column">
@@ -1386,5 +1389,36 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+  // Exemplo de JavaScript para ocultar o elemento quando necessário
+  // Aqui você pode colocar a lógica para determinar quando ocultar o elemento
+  
+  // Por exemplo, se você quer ocultar quando o usuário clicar em um botão:
+  document.getElementById('botao-ocultar').addEventListener('click', function() {
+    document.getElementById('widget-script').style.display = 'none';
+  });
+
+  // Ou se baseando na rolagem da página:
+  window.addEventListener('scroll', function() {
+    var secao = document.getElementById('secao-especifica');
+    var widget = document.getElementById('widget-script');
+
+    // Verifica se a seção específica está visível na tela
+    if (elementIsInView(secao)) {
+      widget.style.display = 'none';
+    } else {
+      widget.style.display = 'block'; // ou 'initial' dependendo do display original do elemento
+    }
+  });
+
+  // Função para verificar se um elemento está visível na tela
+  function elementIsInView(element) {
+    var rect = element.getBoundingClientRect();
+    return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+  }
   </script>
 </html>
