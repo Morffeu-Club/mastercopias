@@ -1098,7 +1098,7 @@ body{
       <a id="Sobrenos" class="nav-link">Sobre nós</a>
       <a id="Contato" class="nav-link">Contato</a>
     </div>
-    <div id="widget-script">
+    <div id="widget-wpp">
       <script src='https://greebox.app/widget/wd/StRJBaEHXgpd' type='text/javascript' charset='utf-8' async defer></script>
     </div>
     <div id="ia8bi" class="gjs-container">
@@ -1239,11 +1239,11 @@ empresarial.<br/><br/>Gráfica Expressa - Cartão de Visita, Panfletos, Convites
   <script>
 // Listener para alterar a classe da navbar quando o scroll atinge determinada posição
 window.addEventListener('scroll', function() {
-  var navbar = document.getElementById('navbar');
-  if (window.scrollY > 350) {
-    navbar.classList.add('scrolled');
+  var navbar = document.getElementById('widget-wpp');
+  if (window.scrollY > 650) {
+    widget-wpp.classList.add('hide');
   } else {
-    navbar.classList.remove('scrolled');
+    widget-wpp.classList.remove('hide');
   }
 });
 
