@@ -1088,6 +1088,9 @@ body{
       height: 60px;
       cursor: pointer;
   }
+  .hide {
+    display: none;
+  }
   </style>
   <body id="iau9"><!-- HTML !--><section id="inkxa" class="gjs-section">
     <div class="navbar" id="navbar">
@@ -1234,6 +1237,16 @@ empresarial.<br/><br/>Gráfica Expressa - Cartão de Visita, Panfletos, Convites
 
   </body>
   <script>
+// Listener para alterar a classe da navbar quando o scroll atinge determinada posição
+window.addEventListener('scroll', function() {
+  var navbar = document.getElementById('navbar');
+  if (window.scrollY > 350) {
+    navbar.classList.add('scrolled');
+  } else {
+    navbar.classList.remove('scrolled');
+  }
+});
+
 // Listener para alterar a classe da navbar quando o scroll atinge determinada posição
 window.addEventListener('scroll', function() {
   var navbar = document.getElementById('navbar');
